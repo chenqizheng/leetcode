@@ -10,15 +10,18 @@ public class ReBuildBinaryTree {
         return rebuildBinaryTree(preOrder, 0, preOrder.length - 1, inOrder, 0, inOrder.length - 1);
     }
 
-    //TODO 未完成
     public TreeNode rebuildBinaryTree(int[] preOrder, int preOrderStart, int preOrderEnd, int[] inOrder, int inOrderStart, int inOrderEnd) {
         TreeNode treeNode = new TreeNode(preOrder[preOrderStart]);
         int index = findIndex(inOrder, inOrderStart, inOrderEnd, preOrder[preOrderStart]);
         int leftlength = index - inOrderStart;
-        //构建 左子树
-        treeNode.left = rebuildBinaryTree(preOrder, preOrderStart + 1, preOrderStart + leftlength, inOrder, inOrderStart, inOrderStart + leftlength);
-        treeNode.right = rebuildBinaryTree(preOrder, preOrderStart + leftlength + 1, preOrderEnd, inOrder, index + 1, inOrderEnd);
-        //构建 右子树
+        if (leftlength > 0) {
+            //构建 左子树
+            treeNode.left = rebuildBinaryTree(preOrder, preOrderStart + 1, preOrderStart + leftlength, inOrder, inOrderStart, inOrderStart + leftlength);
+        }
+        if (index + 1 < inOrderEnd) {
+            //构建 右子树
+            treeNode.right = rebuildBinaryTree(preOrder, preOrderStart + leftlength + 1, preOrderEnd, inOrder, index + 1, inOrderEnd);
+        }
         return treeNode;
     }
 
