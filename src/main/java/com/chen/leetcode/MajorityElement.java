@@ -3,6 +3,10 @@ package com.chen.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * https://leetcode.com/problems/majority-element/description/
+ */
 public class MajorityElement {
 
     public static int majorityElement(int[] nums) {
@@ -30,4 +34,8 @@ public class MajorityElement {
         return hashMap;
     }
 
+
+    public static final void main(String[] args) {
+        majorityElement(new int[]{1, 1, 2});
+    }
 }
