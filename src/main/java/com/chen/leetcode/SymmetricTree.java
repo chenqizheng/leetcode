@@ -42,13 +42,3 @@ public class SymmetricTree {
         System.out.println(new SymmetricTree().isSymmetric(treeNode));
     }
 }
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
