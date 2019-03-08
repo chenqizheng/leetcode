@@ -34,9 +34,11 @@ public class RemoveLinkedList {
             if (current.val == val) {
                 //delete
                 preCurrent.next = current.next;
+            } else {
+                preCurrent = current;
             }
-            preCurrent = current;
             current = current.next;
+
         }
         return pre.next;
     }
