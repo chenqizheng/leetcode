@@ -32,6 +32,8 @@ public class QuickSort {
                 array[j] = t;
             }
         }
+        array[low] = array[i];
+        array[i] = temp;
         solution(array, low, j - 1);
         solution(array, j + 1, high);
     }

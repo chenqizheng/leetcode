@@ -1,6 +1,8 @@
 package com.chen.nowcoder;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 public class TreePrinter {
     public static void printTree(TreeNode root) {
@@ -42,5 +44,68 @@ public class TreePrinter {
         treeNode3.right = treeNode7;
 
         printTree(treeNode1);
+    }
+
+    public static final void prePrintTree(TreeNode treeNode) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        List<Integer> list = new ArrayList<Integer>();
+
+        while (treeNode != null || !stack.isEmpty()) {
+            while (treeNode != null) {
+                list.add(treeNode.val);
+                stack.add(treeNode);
+                treeNode = treeNode.left;
+            }
+            while (!stack.isEmpty()) {
+                treeNode = stack.pop();
+                treeNode = treeNode.right;
+            }
+        }
+    }
+
+    public static final void mediumPrintTree(TreeNode treeNode) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        List<Integer> list = new ArrayList<Integer>();
+        while (!stack.isEmpty() || treeNode != null) {
+            while (treeNode != null) {
+                stack.push(treeNode);
+                treeNode = treeNode.left;
+            }
+
+            while (!stack.isEmpty()) {
+                treeNode = stack.pop();
+                list.add(treeNode.val);
+                treeNode = treeNode.right;
+            }
+        }
+    }
+
+    public static final void postfixPrintTree(TreeNode treeNode) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        List<Integer> list = new ArrayList<Integer>();
+        while (!stack.isEmpty() || treeNode != null) {
+            while (treeNode != null) {
+                stack.push(treeNode);
+                treeNode = treeNode.left;
+            }
+
+            TreeNode pre = null;
+            boolean tag = true;
+            while (!stack.isEmpty() && tag) {
+                treeNode = stack.peek();
+                if (treeNode.right == pre) {
+                    treeNode = stack.pop();
+                    list.add(treeNode.val);
+                    if (stack.isEmpty()) {
+                        return;
+                    } else {
+                        pre = treeNode;
+                    }
+                } else {
+                    treeNode = treeNode.right;
+                    tag = false;
+                }
+            }
+        }
     }
 }
