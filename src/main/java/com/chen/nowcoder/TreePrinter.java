@@ -43,7 +43,12 @@ public class TreePrinter {
         treeNode3.left = treeNode6;
         treeNode3.right = treeNode7;
 
-        printTree(treeNode1);
+        List<Integer> list = mediumPrintTree(treeNode1);
+        for (int i : list
+                ) {
+
+            System.out.print(i + "   ");
+        }
     }
 
     public static final void prePrintTree(TreeNode treeNode) {
@@ -56,14 +61,14 @@ public class TreePrinter {
                 stack.add(treeNode);
                 treeNode = treeNode.left;
             }
-            while (!stack.isEmpty()) {
+            if (!stack.isEmpty()) {
                 treeNode = stack.pop();
                 treeNode = treeNode.right;
             }
         }
     }
 
-    public static final void mediumPrintTree(TreeNode treeNode) {
+    public static final List<Integer> mediumPrintTree(TreeNode treeNode) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         List<Integer> list = new ArrayList<Integer>();
         while (!stack.isEmpty() || treeNode != null) {
@@ -72,12 +77,13 @@ public class TreePrinter {
                 treeNode = treeNode.left;
             }
 
-            while (!stack.isEmpty()) {
+            if (!stack.isEmpty()) {
                 treeNode = stack.pop();
                 list.add(treeNode.val);
                 treeNode = treeNode.right;
             }
         }
+        return list;
     }
 
     public static final void postfixPrintTree(TreeNode treeNode) {
@@ -91,7 +97,7 @@ public class TreePrinter {
 
             TreeNode pre = null;
             boolean tag = true;
-            while (!stack.isEmpty() && tag) {
+            if (!stack.isEmpty() && tag) {
                 treeNode = stack.peek();
                 if (treeNode.right == pre) {
                     treeNode = stack.pop();
