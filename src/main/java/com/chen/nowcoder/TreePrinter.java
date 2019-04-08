@@ -43,7 +43,7 @@ public class TreePrinter {
         treeNode3.left = treeNode6;
         treeNode3.right = treeNode7;
 
-        List<Integer> list = mediumPrintTree(treeNode1);
+        List<Integer> list = postfixPrintTree(treeNode1);
         for (int i : list
                 ) {
 
@@ -86,32 +86,30 @@ public class TreePrinter {
         return list;
     }
 
-    public static final void postfixPrintTree(TreeNode treeNode) {
+    public static final List<Integer> postfixPrintTree(TreeNode treeNode) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         List<Integer> list = new ArrayList<Integer>();
-        while (!stack.isEmpty() || treeNode != null) {
-            while (treeNode != null) {
-                stack.push(treeNode);
-                treeNode = treeNode.left;
+        TreeNode last = null;
+        TreeNode cur = treeNode;
+        while (!stack.isEmpty() || cur != null) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
             }
 
-            TreeNode pre = null;
-            boolean tag = true;
-            if (!stack.isEmpty() && tag) {
-                treeNode = stack.peek();
-                if (treeNode.right == pre) {
-                    treeNode = stack.pop();
-                    list.add(treeNode.val);
-                    if (stack.isEmpty()) {
-                        return;
-                    } else {
-                        pre = treeNode;
-                    }
-                } else {
-                    treeNode = treeNode.right;
-                    tag = false;
-                }
+            cur = stack.peek();
+            if (cur.right == null || cur.right == last) {
+                list.add(cur.val);
+                stack.pop();
+                // 记录上一个访问的节点
+                // 用于判断“访问根节点之前，右子树是否已访问过”
+                last = cur;
+                // 表示不需要转向，继续弹栈
+                cur = null;
+            } else {
+                cur = cur.right;
             }
         }
+        return list;
     }
 }
