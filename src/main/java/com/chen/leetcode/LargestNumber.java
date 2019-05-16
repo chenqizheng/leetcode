@@ -9,7 +9,7 @@ public class LargestNumber {
     }
 
     public String largestNumber(int[] nums) {
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
         for (int num : nums) {
             list.add(String.valueOf(num));
         }
