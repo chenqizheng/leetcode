@@ -1,5 +1,7 @@
 package com.chen.nowcoder;
 
+import com.chen.leetcode.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -59,6 +61,7 @@ public class TreePrinter {
             while (treeNode != null) {
                 list.add(treeNode.val);
                 stack.add(treeNode);
+                System.out.println(treeNode.val);
                 treeNode = treeNode.left;
             }
             if (!stack.isEmpty()) {
