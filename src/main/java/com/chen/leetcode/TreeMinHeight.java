@@ -26,6 +26,33 @@ public class TreeMinHeight {
         }
     }
 
+
+    public int minDepth2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        ArrayList<TreeNode> queue = new ArrayList<>();
+        queue.add(root);
+        int depth = 0;
+        while (!queue.isEmpty()) {
+            depth++;
+            int k = queue.size();
+            for (int i = 0; i < k; i++) {
+                TreeNode treeNode = queue.remove(0);
+                if (treeNode.left != null) {
+                    queue.add(treeNode.left);
+                }
+                if (treeNode.right != null) {
+                    queue.add(treeNode.right);
+                }
+                if (treeNode.left == null && treeNode.right == null) {
+                    return depth;
+                }
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
 
     }
