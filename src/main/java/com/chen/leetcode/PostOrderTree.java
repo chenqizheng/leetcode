@@ -1,8 +1,8 @@
 package com.chen.leetcode;
 
-import java.util.ArrayList;
+import com.chen.model.TreeNode;
+
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Created by Chen on 2017/4/24.

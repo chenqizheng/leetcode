@@ -1,5 +1,7 @@
 package com.chen.leetcode;
 
+import com.chen.model.TreeNode;
+
 import java.util.ArrayList;
 
 public class TreeMinHeight {

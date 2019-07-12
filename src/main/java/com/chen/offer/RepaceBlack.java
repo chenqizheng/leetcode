@@ -1,5 +1,8 @@
 package com.chen.offer;
 
+/**
+ * 将字符创的空格替换为%20
+ */
 public class RepaceBlack {
     public String solution(String str) {
 

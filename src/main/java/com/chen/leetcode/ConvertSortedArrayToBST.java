@@ -1,5 +1,7 @@
 package com.chen.leetcode;
 
+import com.chen.model.TreeNode;
+
 public class ConvertSortedArrayToBST {
     public TreeNode sortedArrayToBST(int[] nums) {
         TreeNode root = handle(nums, 0, nums.length - 1);

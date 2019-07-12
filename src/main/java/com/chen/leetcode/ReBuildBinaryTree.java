@@ -1,5 +1,7 @@
 package com.chen.leetcode;
 
+import com.chen.model.TreeNode;
+
 /**
  * 根据前序遍历、中序遍历重构二叉树
  * Created by Chen on 2017/4/17.

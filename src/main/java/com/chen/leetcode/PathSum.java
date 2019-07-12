@@ -1,7 +1,8 @@
 package com.chen.leetcode;
 
+import com.chen.model.TreeNode;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**

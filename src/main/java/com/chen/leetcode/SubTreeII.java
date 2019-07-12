@@ -1,5 +1,7 @@
 package com.chen.leetcode;
 
+import com.chen.model.TreeNode;
+
 public class SubTreeII {
 
     public boolean isSubtree(TreeNode s, TreeNode t) {

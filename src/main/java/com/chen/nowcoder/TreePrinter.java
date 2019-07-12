@@ -1,6 +1,6 @@
 package com.chen.nowcoder;
 
-import com.chen.leetcode.TreeNode;
+import com.chen.model.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

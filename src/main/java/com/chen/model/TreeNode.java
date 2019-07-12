@@ -1,4 +1,4 @@
-package com.chen.leetcode;
+package com.chen.model;
 
 public class TreeNode {
     public int val;
