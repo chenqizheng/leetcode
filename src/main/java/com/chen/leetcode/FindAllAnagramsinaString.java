@@ -21,7 +21,7 @@ public class FindAllAnagramsinaString {
             right++;
             if (needs.containsKey(c)) {
                 windows.put(c, 1);
-                if(windows.get(c) ==)
+//                if(windows.get(c) ==)
                 vaild++;
             }
         }
