@@ -1,5 +1,7 @@
 package com.chen.leetcode;
 
+import com.chen.model.TreeNode;
+
 /**
  * Created by Chen on 2017/5/3.
  */

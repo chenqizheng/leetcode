@@ -1,5 +1,7 @@
 package com.chen.leetcode;
 
+import com.chen.model.TreeNode;
+
 /**
  * 判断是否是子树
  * Created by Chen on 2017/4/19.

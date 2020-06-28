@@ -1,5 +1,7 @@
 package com.chen.leetcode;
 
+import com.chen.model.TreeNode;
+
 public class InvertBinaryTree {
 
     public TreeNode invertTree(TreeNode root) {
