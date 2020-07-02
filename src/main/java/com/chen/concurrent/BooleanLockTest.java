@@ -32,6 +32,7 @@ public class BooleanLockTest {
     public void testNotify(){
         isOn =true;
 
+        // mock Time-consuming operation
         PowXN powXN = new PowXN();
         System.out.println(powXN.myPow(new Random().nextInt(10), new Random().nextInt(5)));
 
