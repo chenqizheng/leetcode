@@ -1,9 +1,12 @@
-package com.chen.leetcode;
+package com.chen.group.search.combination;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * https://leetcode.com/problems/combination-sum-ii/
+ */
 public class CombinationSumII {
     private List<List<Integer>> result = new ArrayList<>();
 

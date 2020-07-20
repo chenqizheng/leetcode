@@ -1,9 +1,12 @@
-package com.chen.leetcode;
+package com.chen.group.search.combination;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Combinations2 {
+/***
+ https://leetcode.com/problems/combinations/
+ */
+public class Combinations {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
         dfs(result, new ArrayList<>(), n, k);
@@ -16,7 +19,7 @@ public class Combinations2 {
         } else {
             for (int i = n; i > 0; i--) {
                 select.add(i);
-                dfs(result, select, i-1, k - 1);
+                dfs(result, select, i - 1, k - 1);
                 select.remove(select.size() - 1);
             }
         }
@@ -24,7 +27,7 @@ public class Combinations2 {
     }
 
     public static void main(String[] args) {
-        List<List<Integer>> lists = new Combinations2().combine(4, 2);
+        List<List<Integer>> lists = new Combinations().combine(4, 2);
         for (List<Integer> list : lists) {
             for (int i : list) {
                 System.out.print(i + ",");
