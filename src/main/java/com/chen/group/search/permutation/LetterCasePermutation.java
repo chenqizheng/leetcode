@@ -3,6 +3,9 @@ package com.chen.group.search.permutation;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * https://leetcode.com/problems/letter-case-permutation/
+ */
 public class LetterCasePermutation {
     public List<String> letterCasePermutation(String S) {
         List<String> result = new ArrayList<>();
