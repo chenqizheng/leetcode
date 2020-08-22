@@ -53,7 +53,7 @@ public class NQueens {
     }
 
     public static void main(String[] args) {
-        List<List<String>> result = new NQueue().solveNQueens(8);
+        List<List<String>> result = new NQueens().solveNQueens(8);
         for (int i = 0; i < result.size(); i++) {
             for (String str : result.get(i)) {
                 System.out.println(str);
