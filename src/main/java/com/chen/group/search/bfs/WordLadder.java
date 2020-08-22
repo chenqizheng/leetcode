@@ -10,10 +10,8 @@ import java.util.List;
 public class WordLadder {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         ArrayList<String> queue = new ArrayList<String>();
-        HashSet<String> set = new HashSet<String>();
-        set.addAll(wordList);
         int step = 0;
-        if (!set.contains(endWord)) {
+        if (!wordList.contains(endWord)) {
             return 0;
         }
         queue.add(beginWord);
@@ -25,7 +23,6 @@ public class WordLadder {
             for (int i = 0; i < size; i++) {
                 String temp = queue.remove(0);
                 for (int j = 0; j < length; j++) {
-                    char c = temp.charAt(j);
                     for (int ch = 'a'; ch <= 'z'; ch++) {
                         char[] chars = temp.toCharArray();
                         chars[j] = (char) ch;
@@ -33,11 +30,11 @@ public class WordLadder {
                         if (s.equals(endWord)) {
                             return step + 1;
                         }
-                        if (!set.contains(s)) {
+                        if (!wordList.contains(s)) {
                             continue;
                         }
                         String newWord = new String(chars);
-                        set.remove(newWord);
+                        wordList.remove(newWord);
                         queue.add(newWord);
                     }
                 }
