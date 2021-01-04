@@ -1,4 +1,4 @@
-package com.chen.group.search.dfs;
+package com.chen.group.search.partition;
 
 import java.util.ArrayList;
 import java.util.List;
